@@ -19,6 +19,7 @@ export default function Hero() {
           title="Explore Cars"
           containerStyles="bg-primary-blue text-white rounded-full mt-10"
           handleClick={handleScroll}
+          textStyles='text-white'
         />
       </div>
         <div className="hero_image-container">

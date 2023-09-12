@@ -34,6 +34,9 @@ function Footer() {
                             <p>&copy;2023 CarHub. All Rights Reserved </p>
                         <div className="footer_copyrights-link ">
                         <Link href="/" className="text-gray-500">
+                               Developer ~ Viannie Abaine
+                            </Link>
+                            <Link href="https://www.desishub.com" className="text-gray-500">
                                 Desishub.Inc
                             </Link>
                             <Link href="/" className="text-gray-500">
