@@ -7,7 +7,12 @@ import { fetchCars } from '@/utils'
 import Image from 'next/image'
 
 export default function Home() {
+  
+  //const [allCars, setAllCars] = useState<{ message: string }[]>([]);
+
     const [allCars, setAllCars] = useState([]);
+    //const message = (allCars as { message: string }[])[0]?.message;
+    
     const [loading, setLoading] = useState(false);
     //search states
     const [manufacturer, setManufacturer] = useState("");
@@ -57,11 +62,11 @@ export default function Home() {
             />
 
             <div className="home_filter-container">
-              <CustomFilter title="fuel" options={fuels} setFilter = {setFuel}/>
-              <CustomFilter title="year" options={yearsOfProduction} setFilter = {setYear}/>
+              <CustomFilter title="fuel" options={fuels} setFilter = {"setFuel"}/>
+              <CustomFilter title="year" options={yearsOfProduction} setFilter = {"setYear"}/>
             </div>
           </div>
-          {allCars.length >0 ? (
+          {allCars.length > 0 ? (
             <section>
               <div className='home_cars-wrapper'>
                 {allCars?.map((car) => (<CarCard car={car}/>))}
