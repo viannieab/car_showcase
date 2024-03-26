@@ -10,23 +10,23 @@ export default function Home() {
   
   //const [allCars, setAllCars] = useState<{ message: string }[]>([]);
 
-    const [allCars, setAllCars] = useState([]);
+    const [allCars, setAllCars] = useState<any>([]);
     //const message = (allCars as { message: string }[])[0]?.message;
     
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState<boolean>(false);
     //search states
-    const [manufacturer, setManufacturer] = useState("");
-    const [model, setModel] = useState("");
+    const [manufacturer, setManufacturer] = useState<string>("");
+    const [model, setModel] = useState<string>("");
     //filter states
-    const [fuel, setFuel] = useState("");
-    const [year, setYear] = useState(2022);
+    const [fuel, setFuel] = useState<string>("");
+    const [year, setYear] = useState<number>(2022);
     //pagination states
-    const [limit, setLimit] = useState(10);
+    const [limit, setLimit] = useState<number>(10);
     
-    const getCars = async () =>{
+    const getCars:any = async () =>{
         setLoading(true);
       try {
-        const result = await fetchCars({
+        const result:any = await fetchCars({
           manufacturer: manufacturer || '',
           year: year || 2022,
           fuel: fuel || '',
@@ -34,7 +34,7 @@ export default function Home() {
           model: model || '',
         });
         setAllCars(result);
-      } catch (error) {
+      } catch (error:any) {
         console.log(error);
       }finally{
         setLoading(false);
@@ -69,7 +69,7 @@ export default function Home() {
           {allCars.length > 0 ? (
             <section>
               <div className='home_cars-wrapper'>
-                {allCars?.map((car) => (<CarCard car={car}/>))}
+                {allCars?.map((car:any) => (<CarCard car={car}/>))}
               </div>
                   {loading && (
                     <div className='mt-16 w-full flex-center'>
