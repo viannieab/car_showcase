@@ -6,7 +6,7 @@ import { Listbox, Transition } from '@headlessui/react';
 import { CustomFilterProps } from '@/types';
 //import { updateSearchParams } from '@/utils';
 
-const CustomFilter = ({title, options, setFilter}:CustomFilterProps) => {
+const CustomFilter = ({title, options, setFilter}:any) => {
   const [selected,setSelected] = useState(options[0])
   
  return (
@@ -36,7 +36,7 @@ const CustomFilter = ({title, options, setFilter}:CustomFilterProps) => {
               leaveTo='opacity-0'
             >
                 <Listbox.Options className="custom-filter_options">
-                  {options.map((option) => (
+                  {options.map((option:any) => (
                     <Listbox.Option 
                       key={option.title}
                       value={option}
